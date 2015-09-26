@@ -159,7 +159,6 @@ protected:
 	// end
 	void CColorCopDlg::FloatPrecisionUp();
 	void CColorCopDlg::FloatPrecisionDown();
-	//void CColorCopDlg::BlockMeasure(POINT ptBeg, POINT ptEnd);
 	void CColorCopDlg::GetScreenBitmap(CPoint point);
 
 	void CColorCopDlg::StopCapture(void);
