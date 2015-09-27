@@ -13,10 +13,7 @@
 #include "ColorCopDlg.h"
 #include "Label.h"			// used for the Links in the AboutDlg
 #include "SystemTray.h"		// used to minimize to the systray
-#include <commctrl.h>
 #include <math.h>
-#include <windows.h>
-#include <winuser.h>
 
 
 #ifdef _DEBUG
