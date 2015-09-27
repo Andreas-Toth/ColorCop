@@ -1616,7 +1616,8 @@ void CColorCopDlg::OnLButtonDown(UINT nFlags, CPoint point)
 		}
 
 		strStatus.LoadString(IDS_MAG_INCREASED);
-		strStatus.Format(strStatus, m_MagLevel);
+		strStatus.Format(CString(strStatus), m_MagLevel);
+
 		SetStatusBarText(strStatus);
 
 		RecalcZoom();
@@ -1633,7 +1634,7 @@ void CColorCopDlg::OnLButtonDown(UINT nFlags, CPoint point)
 
 		strStatus.LoadString(IDS_MAG_DECREASED);
 		strStatus.Format(strStatus, m_MagLevel);
-		SetStatusBarText(strStatus);
+		SetStatusBarText(CString(strStatus));
 
 		RecalcZoom();
 
@@ -1950,7 +1951,7 @@ void CColorCopDlg::OnMouseMove(UINT nFlags, CPoint point)
 
 
 					strStatus.LoadString(IDS_RELATIVE_POS);
-					strStatus.Format(strStatus, iWidth, 
+					strStatus.Format(CString(strStatus), iWidth, 
 												iHeight,
 												dLength,
 												dAngle
@@ -1962,7 +1963,7 @@ void CColorCopDlg::OnMouseMove(UINT nFlags, CPoint point)
 
 					strStatus.LoadString(IDS_EYEDROPPING);
 					strStatus += ", %dx%d";
-					strStatus.Format(strStatus, point.x, point.y, m_iSamplingOffset*2+1, m_iSamplingOffset*2+1);
+					strStatus.Format(CString(strStatus), point.x, point.y, m_iSamplingOffset*2+1, m_iSamplingOffset*2+1);
 
 				} else { // SampleRate == 1
 
@@ -2003,7 +2004,7 @@ void CColorCopDlg::OnMouseMove(UINT nFlags, CPoint point)
 	} else if (m_isMagnifying) {		// or are we magnifiying??
 
 		strStatus.LoadString(IDS_MAGNIFYING);
-		strStatus.Format(strStatus, point.x, point.y, m_MagLevel);
+		strStatus.Format(CString(strStatus), point.x, point.y, m_MagLevel);
 		SetStatusBarText(strStatus);
 
 		GetScreenBitmap(point);
@@ -2276,7 +2277,7 @@ BOOL CColorCopDlg::PreTranslateMessage(MSG* pMsg)
 				if (m_isEyedropping && GetCursorPos(&RelativePoint)) {
 					RelativePointEnd = RelativePoint;
 					strStatus.LoadString(IDS_RELATIVE_POS);
-					strStatus.Format(strStatus, 0, 0,0,90);
+					strStatus.Format(CString(strStatus), 0, 0, 0, 90);
 					SetStatusBarText(strStatus);
 
 					if (!(m_Appflags & USECROSSHAIR)) { 
@@ -3594,7 +3595,7 @@ void CColorCopDlg::OnTimer(UINT nIDEvent)
 			}
 
 			strStatus.LoadString(IDS_MAG_DECREASED);
-			strStatus.Format(strStatus, m_MagLevel);
+			strStatus.Format(CString(strStatus), m_MagLevel);
 			SetStatusBarText(strStatus);
 
 			RecalcZoom();
@@ -3606,7 +3607,7 @@ void CColorCopDlg::OnTimer(UINT nIDEvent)
 			}
 
 			strStatus.LoadString(IDS_MAG_INCREASED);
-			strStatus.Format(strStatus, m_MagLevel);
+			strStatus.Format(CString(strStatus), m_MagLevel);
 			SetStatusBarText(strStatus);
 
 			RecalcZoom();
@@ -3933,10 +3934,6 @@ void CColorCopDlg::OnPopupOptionsStartcursoroneyedropper()
 void CColorCopDlg::OnWindowPosChanging(WINDOWPOS FAR* lpwndpos) 
 {
 
-//	if(!m_bvisible) {
-  //      lpwndpos->flags &= ~SWP_SHOWWINDOW;
-//	}
-
 	CDialog::OnWindowPosChanging(lpwndpos);
 }
 
@@ -3954,10 +3951,10 @@ void CColorCopDlg::OnPopupSamplingDecreasemultipixelaverage()
 
 	if (m_iSamplingOffset>MULTIPIX_MIN) {
 		m_iSamplingOffset--;
-		strStatus.Format(strStatus, m_iSamplingOffset*2+1,m_iSamplingOffset*2+1);
+		strStatus.Format(CString(strStatus), m_iSamplingOffset*2+1,m_iSamplingOffset*2+1);
 	} else {
 		strStatus.LoadString(IDS_MULTIPIX_LIMIT);
-		strStatus.Format(strStatus, MULTIPIX_MIN*2+1,MULTIPIX_MAX*2+1);
+		strStatus.Format(CString(strStatus), MULTIPIX_MIN*2+1,MULTIPIX_MAX*2+1);
 
 	}
 	SetStatusBarText(strStatus);
@@ -3976,10 +3973,10 @@ void CColorCopDlg::OnPopupSamplingIncreasemultipixelaverage()
 
 	if (m_iSamplingOffset<MULTIPIX_MAX) {
 		m_iSamplingOffset++;
-		strStatus.Format(strStatus, m_iSamplingOffset*2+1,m_iSamplingOffset*2+1);
+		strStatus.Format(CString(strStatus), m_iSamplingOffset*2+1,m_iSamplingOffset*2+1);
 	} else {
 		strStatus.LoadString(IDS_MULTIPIX_LIMIT);
-		strStatus.Format(strStatus, MULTIPIX_MIN*2+1,MULTIPIX_MAX*2+1);
+		strStatus.Format(CString(strStatus), MULTIPIX_MIN*2+1,MULTIPIX_MAX*2+1);
 
 	}
 	SetStatusBarText(strStatus);
