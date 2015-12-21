@@ -31,6 +31,8 @@
 #define IDB_BITMAP2                     164
 #define IDR_COLORCOP_ACCEL              166
 #define IDC_MYCROSS                     169
+#define IDR_241                         170
+#define IDR_1                           170
 #define IDM_ALWAYSONTOP                 0x0100
 #define IDM_OPTIONMENU                  0x0110
 #define IDC_RED                         1000
@@ -179,7 +181,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        170
+#define _APS_NEXT_RESOURCE_VALUE        171
 #define _APS_NEXT_COMMAND_VALUE         32827
 #define _APS_NEXT_CONTROL_VALUE         1067
 #define _APS_NEXT_SYMED_VALUE           101
