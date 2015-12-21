@@ -228,6 +228,10 @@ SOURCE=.\Res\MOVE4WAY.CUR
 # End Group
 # Begin Source File
 
+SOURCE=.\manifest.xml
+# End Source File
+# Begin Source File
+
 SOURCE=.\ReadMe.txt
 # End Source File
 # End Target
