@@ -180,9 +180,9 @@ BEGIN
             VALUE "FileDescription", "multi-purpose color picker\0"
             VALUE "FileVersion", "v5.4.7\0"
             VALUE "InternalName", "Color Cop\0"
-            VALUE "LegalCopyright", "Copyright © 2015 Jay Prall\0"
+            VALUE "LegalCopyright", "Copyright © 2016 Jay Prall\0"
             VALUE "ProductName", "Color Cop\0"
-            VALUE "ProductVersion", "v5.4.6\0"
+            VALUE "ProductVersion", "v5.4.7\0"
         END
     END
     BLOCK "VarFileInfo"
